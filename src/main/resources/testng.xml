@@ -1,0 +1,37 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name = "Cross Browser Test" thread-count="3" parallel="methods">
+
+    <listeners>
+        <listener class-name="com.wire.helpCenter.utilities.Listener"/>
+    </listeners>
+
+    <test name = "HelpCenterTest-Chrome" enabled="true">
+        <parameter name="browser" value="CHROME"/>
+        <parameter name="mainPageTitle" value="The most secure collaboration platform · Wire"/>
+        <parameter name="searchTextNoResult" value="Cost"/>
+        <parameter name="searchText" value="Invite a guest"/>
+        <parameter name="resultText" value="14 results for"/>
+        <parameter name="guestsPageText" value="Guest access"/>
+        <parameter name="hcTitle" value="We're here to help."/>
+        <parameter name="title" value="Guests"/>
+        <classes>
+            <class name = "com.wire.helpCenter.HelpCenterTest"/>
+        </classes>
+    </test>
+
+    <test name = "HelpCenterTest-Firefox" enabled="false">
+        <parameter name="browser" value="FIREFOX"/>
+        <parameter name="mainPageTitle" value="The most secure collaboration platform · Wire"/>
+        <parameter name="searchTextNoResult" value="Cost"/>
+        <parameter name="searchText" value="Invite a guest"/>
+        <parameter name="resultText" value="14 results for"/>
+        <parameter name="guestsPageText" value="Guest access"/>
+        <parameter name="hcTitle" value="We're here to help."/>
+        <parameter name="title" value="Guests"/>
+        <classes>
+            <class name = "com.wire.helpCenter.HelpCenterTest"/>
+        </classes>
+    </test>
+</suite>
